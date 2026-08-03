@@ -290,3 +290,60 @@ body.dark-mode .newsletter-form input {
 body.dark-mode .newsletter-form input::placeholder {
     color: #b37385;
 }
+
+/* ===================================================
+   MODO ESCURO (Dark Mode - Fundo Escuro & Letras Rosas)
+   =================================================== */
+
+/* Fundo escuro para a página */
+body.dark-mode {
+    background-color: #121212;
+}
+
+/* Força TODOS os textos dentro do dark-mode a ficarem rosas */
+body.dark-mode,
+body.dark-mode * {
+    color: #ff9ebb !important;
+}
+
+/* Fundo escuro para cards, cabeçalho, rodapé e widgets */
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .post-card,
+body.dark-mode .widget {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste do fundo do Banner */
+body.dark-mode .banner {
+    background: linear-gradient(135deg, #2a1a20, #1e1e1e);
+}
+
+/* Botões e Tags no Dark Mode */
+body.dark-mode .tag {
+    background: #3a1c26;
+}
+
+body.dark-mode .btn,
+body.dark-mode #theme-toggle,
+body.dark-mode .newsletter-form button {
+    background: #d81b60;
+    color: #ffffff !important; /* Mantém o texto do botão branco para leitura, se preferir rosa altere aqui */
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode #theme-toggle:hover,
+body.dark-mode .newsletter-form button:hover {
+    background: #ff4081;
+}
+
+/* Input do Formulário */
+body.dark-mode .newsletter-form input {
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
+}
+
+body.dark-mode .newsletter-form input::placeholder {
+    color: #b37385 !important;
+}
