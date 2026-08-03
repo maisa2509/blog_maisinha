@@ -1,4 +1,80 @@
-/* Layout da página */
+/* Resets básicos e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    background-color: #fdf6f8;
+    color: #333333;
+}
+
+/* Header & Navegação */
+header {
+    background-color: #ffffff;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    color: #c46b85;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #c46b85;
+}
+
+#theme-toggle {
+    background: #e8a5b8;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#theme-toggle:hover {
+    background: #c46b85;
+}
+
+/* Banner Principal */
+.banner {
+    background: linear-gradient(135deg, #f8e1e7, #f3d0da);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.banner h2 {
+    color: #8c3b53;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner p {
+    color: #666666;
+}
+
+/* Layout Container */
 .container {
     display: flex;
     gap: 2rem;
@@ -16,7 +92,7 @@
 }
 
 .post-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -32,6 +108,17 @@
     padding: 1.2rem;
 }
 
+.post-content h3 {
+    margin: 0.5rem 0;
+    color: #333333;
+}
+
+.post-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666666;
+}
+
 .tag {
     background: #f8e1e7;
     color: #c46b85;
@@ -45,10 +132,15 @@
     display: inline-block;
     margin-top: 1rem;
     background: #e8a5b8;
-    color: #fff;
+    color: #ffffff;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #c46b85;
 }
 
 /* Sidebar */
@@ -60,20 +152,141 @@
 }
 
 .widget {
-    background: #fff;
+    background: #ffffff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Responsividade para telas menores */
+.widget h3 {
+    color: #333333;
+    margin-bottom: 0.8rem;
+}
+
+.widget p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.newsletter-form input {
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: #c46b85;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #ffffff;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .container {
         flex-direction: column;
     }
 }
 
+/* ===================================================
+   MODO ESCURO (Dark Mode - Fundo Escuro & Letras Rosas)
+   =================================================== */
+
 body.dark-mode {
     background-color: #121212;
+    color: #ff9ebb; /* Cor de texto rosa clara */
+}
+
+/* Headers e Elementos em Dark Mode */
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .post-card,
+body.dark-mode .widget {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body.dark-mode header .logo h1,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode nav a,
+body.dark-mode .post-content h3,
+body.dark-mode .post-content p,
+body.dark-mode .widget h3,
+body.dark-mode .widget p,
+body.dark-mode footer p {
+    color: #ff9ebb; /* Aplica o rosa para todos os textos */
+}
+
+body.dark-mode nav a:hover {
+    color: #ff4081;
+}
+
+/* Ajuste do Banner */
+body.dark-mode .banner {
+    background: linear-gradient(135deg, #2a1a20, #1e1e1e);
+}
+
+body.dark-mode .banner h2 {
+    color: #ff69b4;
+}
+
+body.dark-mode .banner p {
+    color: #ffb6c1;
+}
+
+/* Ajuste dos Botões e Inputs */
+body.dark-mode .tag {
+    background: #3a1c26;
+    color: #ff8da1;
+}
+
+body.dark-mode .btn,
+body.dark-mode #theme-toggle,
+body.dark-mode .newsletter-form button {
+    background: #d81b60;
     color: #ffffff;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode #theme-toggle:hover,
+body.dark-mode .newsletter-form button:hover {
+    background: #ff4081;
+}
+
+body.dark-mode .newsletter-form input {
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
+    color: #ff9ebb;
+}
+
+body.dark-mode .newsletter-form input::placeholder {
+    color: #b37385;
 }
