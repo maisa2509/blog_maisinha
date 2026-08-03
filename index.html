@@ -20,6 +20,7 @@
                 <li><a href="#">Sobre</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle">Alternar tema</button>
     </header>
 
     <section class="banner">
@@ -83,6 +84,13 @@
     <footer>
         <p>&copy; 2026 Blog da Maisa. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle')
+
+        toggleBtn.addEventListener('click', () =>{
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 
 </body>
 </html>
